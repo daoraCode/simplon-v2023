@@ -1,0 +1,105 @@
+ /* global css, used to get rid of useless margins/paddings */
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* main colors */
+:root {
+    --clr-red: #CF3034;
+    --clr-grey: #F1F5F8;
+    --clr-white: #ffffff;
+    
+    --clr-black: #000000;
+    /* default font-size */
+    --default-size: 16px;
+    --mid-size: 22px;
+    --gd-size: 38px;
+}
+
+h1 {
+    font-size: var(--gd-size);
+    color: var(--clr-red);
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    background-color: var(--clr-white);
+    border: none;
+}
+
+section, div, header, nav {
+    border: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0 122px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: var(--main-size);
+    background-color: var(--clr-grey);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 19px 0;
+    width: 100%;
+    height: 83px;
+}
+
+.main-logo-container {
+    width: 58px;
+    height: 58px;
+}
+
+.navbar {
+    height: 25px;
+}
+
+.navbar-container {
+    display: flex;
+}
+
+.navbar-list {
+    display: flex;
+}
+
+.list-item {
+    margin: 0px 40px;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* header breakpoints */
+@media screen and (min-wisth: 650px) {
+    .header-container {
+        flex-direction: column;
+    }
+}
+
+.hero-container {
+    background-color: var(--clr-white);
+    width: 100%;
+    height: 514px;
+    margin-top: 39px;
+}
+
+.hero-left {
+    margin: 30px;
+}
