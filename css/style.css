@@ -1,4 +1,4 @@
- /* global css, used to get rid of useless margins/paddings */
+ /* global css, default properties used to get rid of any margin or padding */
 *, ::after, ::before {
     padding: 0;
     margin: 0;
@@ -9,22 +9,75 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* main colors */
 :root {
+    /* main hexadecimal colors units */
     --clr-red: #CF3034;
     --clr-grey: #F1F5F8;
-    --clr-white: #ffffff;
-    
+    --clr-white: #ffffff; 
     --clr-black: #000000;
-    /* default font-size */
-    --default-size: 16px;
+
+    /* default font-sizes */
+    --min-size: 18px;
     --mid-size: 22px;
-    --gd-size: 38px;
+    --max-size: 38px;
+
+    /* line-height */
+    --l-height-heading-txt: 43.09px;
+    --l-height-p: 24.55px;
+}
+
+/* buttons */
+button {
+    font-family: inherit;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: none;
+    height: 52px;
+    font-size: var(--min-size);
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 14px 32px;
+    line-height: var(--l-height-p);
+    margin: 13px 19px 0 0;
+}
+
+.filled-button {
+    margin-right: 19px;
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+}
+
+.clear-button {
+    background-color: var(--clr-white);
+    color: var(--clr-red);
+    border: 2px solid var(--clr-red);
+}
+
+.button-hero-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* global image properties */
+img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    aspect-ratio: auto;
+}
+
+p {
+    font-size: var(--min-size);
+    line-height: var(--l-height-p)
 }
 
 h1 {
-    font-size: var(--gd-size);
+    font-size: var(--max-size);
     color: var(--clr-red);
+    line-height: var(--l-height-heading-txt);
+    font-weight: bold;
 }
 
 hr {
@@ -35,15 +88,20 @@ hr {
 }
 
 section, div, header, nav {
-    border: 0;
     margin: 0;
+    /* prevent any container to be eaxctly included inside of its parents div */
+    box-sizing: border-box !important; 
 }
 
 body {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: var(--min-size);
+    background-color: var(--clr-grey);
     margin: 0 122px;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: var(--main-size);
-    background-color: var(--clr-grey);
+    font-weight: 300;
+    line-height: 1.13;
 }
 
 html {
@@ -52,11 +110,11 @@ html {
 
 /* header */
 .header-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 19px 0;
-    width: 100%;
     height: 83px;
 }
 
@@ -66,6 +124,7 @@ html {
 }
 
 .navbar {
+    width: 100%;
     height: 25px;
 }
 
@@ -74,32 +133,70 @@ html {
 }
 
 .navbar-list {
+    list-style: none;
     display: flex;
+    justify-content: space-between;
 }
 
-.list-item {
-    margin: 0px 40px;
-    list-style: none;
+.navbar-list li a {
+    display: block;
     text-decoration: none;
-    text-align: center;
-    font-size: 18px;
+    font-size: var(--min-size);
     font-weight: 400;
+    padding: 1rem;
+}
+
+/* .list-item {
+
+} */
+
+.navbar-list li:hover {
+    background-color: var(--clr-white);
 }
 
 /* header breakpoints */
-@media screen and (min-wisth: 650px) {
-    .header-container {
-        flex-direction: column;
-    }
-}
-
 .hero-container {
+    padding: 45px 60px;
+    display: flex;
     background-color: var(--clr-white);
     width: 100%;
     height: 514px;
     margin-top: 39px;
 }
 
-.hero-left {
-    margin: 30px;
+.inner_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inner_right {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.inner_left, .inner_right {
+    width: 50%;
+    height: 424px;
+}
+
+.welcome-text {
+    margin-bottom: 10px;
+}
+
+.welcome-img {
+    margin-left: 60px;
+}
+
+.logo-container {
+    width: 300px;
+    height: 102px;
+    margin-bottom: 49px;
+}
+
+
+/* :: BREAKPOINTS :: */
+
+/* (889px and above) */
+@media only screen and (max-width: 889px) {
 }
