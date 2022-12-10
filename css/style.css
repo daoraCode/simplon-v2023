@@ -1,13 +1,20 @@
 /* Simplon 2023 v.1.0 - Severin */
 /* global css, default properties used to get rid of any margin or padding */
 
+
 :root {
     /* css variables - customed css properties */
     /* main hexadecimal (units) colors */
     --red: #CF3034;
     --grey: #F1F5F8;
-    --white: #ffffff; 
     --black: #000000;
+    
+    --widthMedium: 645px;
+    --widthSmall: 500px;
+
+    /* dark mode */
+    --dark: rgba(43, 43, 43, 0.362);
+    --white: #ffffff; 
 
     /* default font size */
     --min-size: 15.8px;
@@ -22,6 +29,13 @@
     --ln-height-heading-text: 43.09px;
     --ln-height-prg-text: 24.55px;
 }
+
+/* @media screen and (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--dark);
+      color: var(--white);
+    }
+} */
 
 .hidden {
     display: none;
@@ -42,9 +56,16 @@
 *, 
 *::before, 
 *::after {
-    box-sizing: border-box !important;
+    font-family: 'Nunito Sans', sans-serif;
     padding: 0;
+    box-sizing: border-box;
     margin: 0;
+}
+
+div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 img {
@@ -81,15 +102,14 @@ a {
 }
 
 body {
+    /* font-family: 'Nunito', sans-serif; */
     text-size-adjust: 100%;
     margin: 19px 122px 0;
-    
+    font-style: normal;
     line-height: 1.13;
     font-size: var(--min-size);
     background-color: rgba(0, 0, 0, 0.118);
-    font-weight: var(--min-font-weight);
     
-    font-family: 'Nunito Sans', sans-serif;
     
     /* color: var(--white); */
     color: var(--black);
@@ -98,7 +118,6 @@ body {
 
 html {
     -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
 }
 
 /* header / navigation bar */
@@ -116,12 +135,13 @@ button {
     align-items: center;
     border: none;
     height: 52px;
-    font-size: clamp(18px, 4vw);
+    font-size: clamp(14px, 7vw, 18px);
     font-weight: 700;
     border-radius: 6px;
     padding-inline: 30px;
     line-height: var(--ln-height-prg-text);
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .fa-bars {
@@ -198,9 +218,9 @@ button {
 }
 
 .bannerLeftCtn {
+    gap: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .mainTextContent {
@@ -290,12 +310,13 @@ button {
     }
 
     .heroCtn .heroBtnContainer button {
+        width: 50vw;
+        font-size: 1.15em;
         align-self: center;
-        padding-inline: 100%;
     }
 }
 
-@media (max-width: 689px) {
+@media (min-width: 400px) and (max-width: 644.99px) {
     .heroCtn {
         max-width: 100%;
         padding: 25px;
@@ -310,12 +331,8 @@ button {
 
     .heroCtn .heroBtnContainer button {
         align-self: center;
-        padding-inline: 100%;
     }
-}
 
-/* Mobile */
-@media (max-width: 570px) {
     body {
         margin: 0;
     }
@@ -339,8 +356,23 @@ button {
 
     .mainTextContent p {
         font-size: clamp(11px, 1.5vw);
-    }    
+    }
+    
+    .heroBtnContainer button {
+        display: block;
+        width: min(232px, 100%);  
+    }
 }
 
-/* @media (max-width: 480px) {
-} */
+/* CSS media below 645px */
+@media (max-width: 645px) {
+    .heroCtn .heroBtnContainer button {
+        width: 90vw;
+    }
+
+    body {
+        margin: 0;
+    }
+}
+
+
