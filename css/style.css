@@ -23,6 +23,18 @@
     --ln-height-prg-text: 24.55px;
 }
 
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.division {
+    margin: 30px auto;
+}
+
 .ctn {
     background-color: #00000018;
 }
@@ -47,7 +59,7 @@ p {
 }
 
 h1 {
-    font-size: var(--max-size);
+    font-size: clamp(16px, 4vw);
     color: var(--red);
     line-height: var(--ln-height-heading-text);
     font-weight: bold;
@@ -104,7 +116,7 @@ button {
     align-items: center;
     border: none;
     height: 52px;
-    font-size: var(--min-size);
+    font-size: clamp(18px, 4vw);
     font-weight: 700;
     border-radius: 6px;
     padding-inline: 30px;
@@ -173,22 +185,16 @@ button {
 }
 
 
-
-
-
-
-
-
 /* Hero - Heading Welcome Section CSS */
 .heroCtn {
     background-color: #fff;
-    padding: 45px 60px;
     display: flex;
     justify-content: center;
     width: min(1196px, 100%);
     min-height: 514px;
-    margin-top: 39px;
     gap: 26.8px;
+    padding: 45px 60px;
+    margin-top: 39px;
 }
 
 .bannerLeftCtn {
@@ -227,7 +233,7 @@ button {
 }
 
 .heroBtnContainer {
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 10px;
     display: flex;
     align-self: flex-start;
@@ -276,6 +282,7 @@ button {
     .heroCtn .bannerRightCtn {
         display: none;
     }
+
     .heroCtn .heroBtnContainer {
         display: flex;
         flex-direction: column;
@@ -286,5 +293,54 @@ button {
         align-self: center;
         padding-inline: 100%;
     }
-
 }
+
+@media (max-width: 689px) {
+    .heroCtn {
+        max-width: 100%;
+        padding: 25px;
+    }
+    
+    .mainTextContent {
+        padding: 0;
+        text-align: left;
+        font-size: var(--min-size);
+        max-width: 100%;
+    }
+
+    .heroCtn .heroBtnContainer button {
+        align-self: center;
+        padding-inline: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 570px) {
+    body {
+        margin: 0;
+    }
+    
+    .heroCtn {
+        margin-top: 0;
+        padding: 8px auto;
+    }
+
+    .mainLogo {
+        align-self: flex-start;
+    }
+
+    .mainTextContent {
+        align-self: flex-start;
+    }
+
+    .mainTextContent h1 {
+        font-size: clamp(14px, 2.5vw);
+    }
+
+    .mainTextContent p {
+        font-size: clamp(11px, 1.5vw);
+    }    
+}
+
+/* @media (max-width: 480px) {
+} */
