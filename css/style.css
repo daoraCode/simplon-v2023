@@ -1,6 +1,12 @@
 /* Simplon 2023 v.1.0 - Severin */
 /* global css, default properties used to get rid of any margin or padding */
 
+body > h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
 
 :root {
     /* css variables - customed css properties */
@@ -46,8 +52,8 @@
 }
 
 body .division {
-    border: red;
-    margin-block: 30px;
+    border: white;
+    margin-block: 45px;
 }
 
 .ctn {
@@ -108,7 +114,6 @@ body {
     line-height: 1.13;
     font-size: var(--min-size);
     background-color: rgba(0, 0, 0, 0.118);
-    
     
     /* color: var(--white); */
     color: var(--black);
@@ -513,67 +518,84 @@ button {
 
 
 /* Simplon Course Surveys Section CSS */
-.SurveyCtn {
-    display: flex;
-    padding: 35.5px 25.5px;
-    gap: 24px;
-    min-height: 500px;
-    background-color: #fff;
-    /* background-color: #000000b3; */
+
+/* scroll - slider (carousel student view) CSS */
+.scroll {
+    overflow: scroll;
 }
 
-.SurveyCtn .SurveyTextCtn {
-    align-self: flex-end;
+.surveyCtn {
     display: flex;
+    padding: 35.5px 25.5px;
     gap: 20px;
+    min-height: 500px;
+    background-color: #fff;
+}
+
+.surveyCtn .surveyTextCtn {
+    display: flex;
+    gap: inherit;
     flex-direction: column;
 }
 
-.SurveyCtn .SurveyTextCtn .quotes {
-    font-size: clamp(58px, 23vw, 116px);
+.surveyCtn .surveyTextCtn .quotes {
+    font-size: 10em;
     color: var(--red);
-    font-weight: bold;
+    font-weight: bolder;
 }
 
-.SurveyCtn .SurveyTextCtn .nameSurvey {
+.surveyCtn .surveyTextCtn .nameSurvey {
     font-size: 1em;
     font-weight: 600;
     color: var(--black);
 }
 
-.SurveyCtn .SurveyTextCtn .surveyDescription {
+.surveyCtn .surveyTextCtn .surveyDescription {
     min-height: 10px;
     text-align: start;
     color: var(--black);
 }
 
-.SurveyCtn .SurveyStudentPhotoCtn {
+.surveyCtn .surveyStudentPhotoCtn {
     min-width: 25%;
-    margin: auto;
+    /* margin: auto; */
 }
 
-.SurveyCtn .SurveyStudentPhotoCtn img {
+.surveyCtn .surveyStudentPhotoCtn .studentPhoto {
     width: 249px;
-    margin: 70px auto;
-    background-color: #000000;
+    margin: 3rem auto;
 }
 
+.surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn .arrow  {
+    width: 39px;
+    height: 39px;
+    margin: 0;
+}
+
+.surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.238);
+    width: 100%;
+    min-height: 39px;
+}
 
 /* Simplon Course Surveys Section CSS */
 @media (max-width: 1000px) {
-    .SurveyCtn {
+    .surveyCtn {
         flex-wrap: wrap;
         flex-direction: column-reverse;
     }
 
-    .SurveyCtn .SurveyStudentPhotoCtn {
+    .surveyCtn .surveyStudentPhotoCtn {
         min-width: 100%;
         margin: auto;
     }
 }
 
 @media (max-width: 645px) {
-    .SurveyCtn .SurveyStudentPhotoCtn {
+    .surveyCtn .surveyStudentPhotoCtn {
         display: none;
     }
 }
