@@ -43,12 +43,23 @@ body > h1 {
     }
 } */
 
-.hidden {
-    display: none;
+.d-block {
+    display: block;
 }
 
-.show {
-    display: block;
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
 }
 
 body .division {
@@ -197,9 +208,9 @@ button {
     list-style: none;
 }
 
-.navBarLinks li, a {
+/* .navBarLinks li, a {
     margin: 18.5px;
-}
+} */
 
 .navBarLinks > li {
     text-align: center;
@@ -518,17 +529,21 @@ button {
 
 
 /* Simplon Course Surveys Section CSS */
-
 /* scroll - slider (carousel student view) CSS */
 .scroll {
-    overflow: scroll;
+    overflow-x: scroll;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap
 }
 
 .surveyCtn {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 31px;
+    padding: 30px;
     gap: 20px;
     min-height: 475px;
     background-color: #fff;
@@ -539,23 +554,12 @@ button {
     height: inherit;
 }
 
-.surveyCtn .arrowCtnRightBottomPos {
-    bottom: 0;
-    position: absolute;
-    align-self: flex-end;
-    /* background-color: black; */
-    /* width: 24%; */
-    /* right: 0; */
-}
-.surveyCtn .surveyBanner {
-    display: flex;
-    /* flex-direction: column; */
-}
-
 .surveyCtn .surveyTextCtn {
     display: flex;
-    gap: inherit;
+    justify-content: space-evenly;
+    gap: 8px;
     flex-direction: column;
+    padding: 1em;
 }
 
 .surveyCtn .surveyTextCtn .quotes {
@@ -578,18 +582,29 @@ button {
 
 .surveyCtn .surveyStudentPhotoCtn {
     min-width: 25%;
-    /* margin: auto; */
 }
 
 .surveyCtn .surveyStudentPhotoCtn .studentPhoto {
     width: 249px;
-    margin: 3rem auto;
+    margin: 2em auto;
 }
 
 .surveyCtn .carouselNumberCtn {
     display: flex;
-    gap: 139px;
-    min-height: 39px;
+    gap: 136px;
+}
+
+.surveyCtn .whiteBannerTestimony .surveyBanner .arrowCtnRightBottomPos {
+    bottom: 0 !important;
+    align-self: flex-end;
+    position: absolute;
+    right: 0;
+    /* border: 1.5px solid #000000; */
+    /* background-color: rgba(0, 0, 0, 0.267); */
+    right: 0 !important;
+    padding-inline: 30px;
+    min-width: 25%;
+    padding-block: 1em;
 }
 
 .surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn .arrow  {
@@ -599,31 +614,117 @@ button {
     cursor: pointer;
     background-color: var(--red);
     color: var(--white);
+    background-color: rgba(0, 0, 0, 0.267);
 }
 
-.prev {
-    /* display: none; */
+.prev, .next {
+    transition: .12s ease-in-out;
+    cursor: pointer;
+    margin: auto 18px;
 }
 
-.next {
-    /* display: none; */
+.prev:hover, .next:hover {
+   -ms-transform: scale(1.65); 
+    -webkit-transform: scale(1.65); 
+    transform: scale(1.65); 
 }
+
+
+/* !! */
+@media (max-width: 1345px) {
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
+        background-color: rgba(175, 49, 49, 0.357);
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .arrowCtnRightBottomPos {
+        /* bottom: 0 !important; */
+        /* align-self: flex-end; */
+        /* border: 1.5px solid #000000; */
+        /* right: 0 !important; */
+        /* padding-inline: 30px; */
+        /* min-width: 25%; */
+        /* padding-block: 1em; */
+
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.267);
+    }
+
+    /* .surveyCtn .surveyStudentPhotoCtn .whiteBannerTestimony .surveyStudentPhotoCtn .studentPhoto {
+        flex: 1;
+        height: 900px;
+        object-fit: cover;
+    } */
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .surveyCtn .whiteBannerTestimony .hidden {
+        display: none;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudeotoCtn {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner.hidden {
+        display: none;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (min-width: 1001px) {
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        flex-wrap: nowrap;
+    }
+}
+
 
 /* Simplon Course Surveys Section CSS */
 @media (max-width: 1000px) {
+    .surveyCtn .whiteBannerTestimony {
+        overflow-x: none;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+    }
+    
+    .surveyCtn .whiteBannerTestimony .surveyBanner .arrowCtnRightBottomPos {
+        position: relative;
+        bottom: 0 !important;
+    }
+    
     .surveyCtn {
         flex-wrap: wrap;
         flex-direction: column-reverse;
     }
-
+    
     .surveyCtn .surveyStudentPhotoCtn {
         min-width: 100%;
         margin: auto;
     }
+
+    .surveyCtn .surveyStudentPhotoCtn {
+        display: none;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        flex-wrap: nowrap;
+    }
 }
 
 @media (max-width: 645px) {
-    .surveyCtn .surveyStudentPhotoCtn {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentCtn {
         display: none;
     }
 }
