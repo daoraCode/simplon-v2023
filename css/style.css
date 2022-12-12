@@ -204,7 +204,7 @@ button {
 }
 
 .navBarLinks {
-        display: flex;
+    display: flex;
     list-style: none;
 }
 
@@ -286,6 +286,34 @@ button {
     object-fit: cover;
 }
 
+@media (max-width: 788.8px) {
+    .heroCtn .bannerRightCtn {
+        display: none;
+    }
+
+    .heroCtn .heroBtnContainer {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .heroCtn .heroBtnContainer button {
+        width: 50vw;
+        font-size: 1.15em;
+        align-self: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
+        height: 5em !important;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .studentPhoto {
+        display: none !important;
+    }
+}
+
 /* Hero - Heading Welcome Section CSS media queries */
 @media (max-width: 1384.8px) {
     .heroCtn {
@@ -314,24 +342,6 @@ button {
         align-items: center;
         flex-direction: column;
         gap: 20px;
-    }
-}
-
-@media (max-width: 788.8px) {
-    .heroCtn .bannerRightCtn {
-        display: none;
-    }
-
-    .heroCtn .heroBtnContainer {
-        display: flex;
-        flex-direction: column;
-        align-self: center;
-    }
-
-    .heroCtn .heroBtnContainer button {
-        width: 50vw;
-        font-size: 1.15em;
-        align-self: center;
     }
 }
 
@@ -492,41 +502,6 @@ button {
     }
 }
 
-/* below 645px */
-@media (max-width: 645px) {
-    .cardList {
-        gap: 4.15px;
-        display: inline-grid;
-    }
-
-    .twoCardsFromLeft, .twoCardsFromRight {
-        gap: 4.15px;
-    }
-    .card {
-        width: 183.5px;
-        height: 197.5px;
-    }
-}
-
-/* below 412px */
-@media (max-width: 412px) {
-    .headingTextImpact {
-        left: 8px;
-    }
-
-    .InfluenceCtn {
-        padding: 0;
-    }
-
-    .cardList {
-        gap: 3px;
-    }
-
-    .twoCardsFromLeft, .twoCardsFromRight {
-        gap: 3px;
-    }
-}
-
 
 /* Simplon Course Surveys Section CSS */
 /* scroll - slider (carousel student view) CSS */
@@ -580,13 +555,13 @@ button {
     color: var(--black);
 }
 
-.surveyCtn .surveyStudentPhotoCtn {
-    min-width: 25%;
+.surveyCtn .surveyBanner .surveyStudentPhotoCtn {
+    height: 24em;
 }
 
-.surveyCtn .surveyStudentPhotoCtn .studentPhoto {
-    width: 249px;
-    margin: 2em auto;
+.surveyCtn .surveyBanner .surveyStudentPhotoCtn .studentPhoto {
+    width: 259px;
+    margin: 20px auto;
 }
 
 .surveyCtn .carouselNumberCtn {
@@ -596,15 +571,14 @@ button {
 
 .surveyCtn .whiteBannerTestimony .surveyBanner .arrowCtnRightBottomPos {
     bottom: 0 !important;
-    align-self: flex-end;
-    position: absolute;
-    right: 0;
+    /* margin: 0; */
+    /* align-self: flex-end; */
+    position: relative;
+    /* right: 0; */
     /* border: 1.5px solid #000000; */
     /* background-color: rgba(0, 0, 0, 0.267); */
-    right: 0 !important;
-    padding-inline: 30px;
-    min-width: 25%;
-    padding-block: 1em;
+    /* right: 0 !important; */
+    /* min-width: 25%; */
 }
 
 .surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn .arrow  {
@@ -612,9 +586,10 @@ button {
     height: 39px;
     margin: 0;
     cursor: pointer;
-    background-color: var(--red);
     color: var(--white);
-    background-color: rgba(0, 0, 0, 0.267);
+
+    /* background-color: var(--red); */
+    /* background-color: rgba(0, 0, 0, 0.267); */
 }
 
 .prev, .next {
@@ -626,21 +601,21 @@ button {
 .prev:hover, .next:hover {
    -ms-transform: scale(1.65); 
     -webkit-transform: scale(1.65); 
-    transform: scale(1.65); 
+    transform: scale(1.65);
 }
-
 
 /* !! */
 @media (max-width: 1345px) {
-
     .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
-        background-color: rgba(175, 49, 49, 0.357);
+        /* background-color: rgba(175, 49, 49, 0.357); */
+        /* flex-wrap: wrap; */
+        
         flex-direction: column;
         display: flex;
-        flex-wrap: wrap;
         align-content: center;
         justify-content: center;
         align-items: center;
+        height: 27em;
     }
 
     .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .arrowCtnRightBottomPos {
@@ -651,9 +626,9 @@ button {
         /* padding-inline: 30px; */
         /* min-width: 25%; */
         /* padding-block: 1em; */
-
+        /* background-color: rgba(0, 0, 0, 0.267); */
+        
         position: relative;
-        background-color: rgba(0, 0, 0, 0.267);
     }
 
     /* .surveyCtn .surveyStudentPhotoCtn .whiteBannerTestimony .surveyStudentPhotoCtn .studentPhoto {
@@ -672,14 +647,15 @@ button {
         display: none;
     }
 
-    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudeotoCtn {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentCtn {
         display: flex;
         overflow: hidden;
     }
 
-    .surveyCtn .whiteBannerTestimony .surveyBanner.hidden {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .hidden {
         display: none;
-        flex-direction: column-reverse;
+        /* not needed */
+        /* flex-: column-reverse; */
     }
 }
 
@@ -692,6 +668,11 @@ button {
 
 /* Simplon Course Surveys Section CSS */
 @media (max-width: 1000px) {
+    .surveyCtn {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
     .surveyCtn .whiteBannerTestimony {
         overflow-x: none;
     }
@@ -704,18 +685,9 @@ button {
         bottom: 0 !important;
     }
     
-    .surveyCtn {
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-    }
-    
     .surveyCtn .surveyStudentPhotoCtn {
         min-width: 100%;
         margin: auto;
-    }
-
-    .surveyCtn .surveyStudentPhotoCtn {
-        display: none;
     }
 
     .surveyCtn .whiteBannerTestimony .surveyBanner {
@@ -723,8 +695,37 @@ button {
     }
 }
 
+/* below 645px */
 @media (max-width: 645px) {
-    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentCtn {
-        display: none;
+    .cardList {
+        gap: 4.15px;
+        display: inline-grid;
+    }
+
+    .twoCardsFromLeft, .twoCardsFromRight {
+        gap: 4.15px;
+    }
+    .card {
+        width: 183.5px;
+        height: 197.5px;
+    }
+}
+
+/* below 412px */
+@media (max-width: 412px) {
+    .headingTextImpact {
+        left: 8px;
+    }
+
+    .InfluenceCtn {
+        padding: 0;
+    }
+
+    .cardList {
+        gap: 3px;
+    }
+
+    .twoCardsFromLeft, .twoCardsFromRight {
+        gap: 3px;
     }
 }
