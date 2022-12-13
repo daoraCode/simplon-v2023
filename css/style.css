@@ -1,33 +1,149 @@
- /* global css, default properties used to get rid of any margin or padding */
-*, ::after, ::before {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/* Simplon 2023 v.1.0 - Severin */
+/* global css, default properties used to get rid of any margin or padding */
 
 :root {
-    /* main hexadecimal colors units */
-    --clr-red: #CF3034;
-    --clr-grey: #F1F5F8;
-    --clr-white: #ffffff; 
-    --clr-black: #000000;
+    /* css variables - customed css properties */
+    /* main hexadecimal (units) colors */
+    --red: #CF3034;
+    --black: #000000;
+    --white: #ffffff;
 
-    /* default font-sizes */
-    --min-size: 18px;
-    --mid-size: 22px;
-    --max-size: 38px;
+    /* ? */
+    --grey: #F1F5F8;
+    
+    /* --widthMedium: 645px; */
+    /* --widthSmall: 500px; */
+
+    /* dark mode */
+    --dark: rgba(43, 43, 43, 0.362);
+
+    /* default font size */
+    /* --min-size: 15.8px; */
+    /* --mid-size: 22.8px; */
+    /* --max-size: 38.8px; */
+
+    /* default font weight */
+    /* --min-font-weight: 400; */
+    /* --max-font-weight: 700; */
 
     /* line-height */
-    --l-height-heading-txt: 43.09px;
-    --l-height-p: 24.55px;
+    --ln-height-heading-text: 43.09px;
+    --ln-height-prg-text: 24.55px;
 }
 
-/* buttons */
+/* @media screen and (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--dark);
+      color: var(--white);
+    }
+} */
+
+.d-block {
+    display: block;
+}
+
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.division {
+    border: white;
+    margin-block: 4em;
+}
+
+/* .ctn {
+    background-color: #00000018;
+} */
+
+span {
+    font-size: 20px;
+    margin: auto 9px;
+    font-weight: bolder;
+}
+
+*, 
+*::before, 
+*::after {
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+p {
+    font-size: 18px;  
+    font-weight: 300;
+}
+
+/* h1 {
+    line-height: var(--ln-height-heading-text);
+    font-weight: bol
+} */
+
+.whiteLine {
+    height: 1px;
+    width: 100%;
+    background-color: var(--white);
+    border: none;
+}
+
+a {
+    border: 0;
+    text-decoration: none;
+    color: var(--black);
+    font-size: var(--min-size);
+    align-self: center;
+}
+
+body {
+    text-size-adjust: 100%;
+    margin: 19px 113px 0;
+    font-style: normal;
+    line-height: 1.13;
+    font-size: var(--min-size);
+    color: var(--black);
+    -webkit-text-size-adjust: 100%;
+
+    background-color: rgba(0, 102, 255, 0.098);
+    /* color: var(--white); */
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* s1 */
+/* Header / Navigation Bar (Top) Section CSS */
+i {
+    margin: 6px 7px;
+}
+
 button {
+    width: max-content;
     font-family: inherit;
     display: inline-flex;
     justify-content: center;
@@ -35,168 +151,740 @@ button {
     align-items: center;
     border: none;
     height: 52px;
-    font-size: var(--min-size);
+    font-size: clamp(14px, 7vw, 18px);
     font-weight: 700;
     border-radius: 6px;
-    padding: 14px 32px;
-    line-height: var(--l-height-p);
-    margin: 13px 19px 0 0;
+    padding-inline: 50px;
+    line-height: var(--ln-height-prg-text);
+    cursor: pointer;
+    vertical-align: middle;
+    background-color: var(--red);
+    color: var(--white);
 }
 
-.filled-button {
-    margin-right: 19px;
-    background-color: var(--clr-red);
-    color: var(--clr-white);
+.heroBtn {
+    transition: all .3s ease-in-out;
 }
 
-.clear-button {
-    background-color: var(--clr-white);
-    color: var(--clr-red);
-    border: 2px solid var(--clr-red);
+.heroBtn:hover {
+    color: var(--red);
+    background-color: var(--white);
+    border: 2px solid var(--red);
 }
 
-.button-hero-container {
-    display: flex;
-    justify-content: flex-start;
+.fa-bars {
+    color: var(--red);
+    font-size: 56px;
 }
 
-/* global image properties */
-img {
-    width: 100%;
-    height: 100%;
-    border: none;
-    aspect-ratio: auto;
-}
-
-p {
-    font-size: var(--min-size);
-    line-height: var(--l-height-p)
-}
-
-h1 {
-    font-size: var(--max-size);
-    color: var(--clr-red);
-    line-height: var(--l-height-heading-txt);
-    font-weight: bold;
-}
-
-hr {
-    height: 1px;
-    width: 100%;
-    background-color: var(--clr-white);
-    border: none;
-}
-
-section, div, header, nav {
-    margin: 0;
-    /* prevent any container to be eaxctly included inside of its parents div */
-    box-sizing: border-box !important; 
-}
-
-body {
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    font-size: var(--min-size);
-    background-color: var(--clr-grey);
-    margin: 0 122px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.13;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* header */
-.header-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 19px 0;
-    height: 83px;
-}
-
-.main-logo-container {
+.logo {
     width: 58px;
-    height: 58px;
+    height: auto;
 }
 
-.navbar {
+
+
+.headerBody {
+    background-color: #0000004f;
+    display: flex;
     width: 100%;
-    height: 25px;
+    height: 83px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
-.navbar-container {
+.navBar {
+    width: 100%;
     display: flex;
-}
-
-.navbar-list {
-    list-style: none;
-    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.navbar-list li a {
-    display: block;
-    text-decoration: none;
-    font-size: var(--min-size);
+.navBar .navBarLinks {
+    text-align: center;
+    align-items: center;
+    line-height: 24.55px;
+    margin: 0 15px;
+    padding: 7px;
     font-weight: 400;
-    padding: 1rem;
+    text-decoration: none; 
+    margin: 0;
+    padding: 0;
 }
 
-/* .list-item {
+.navBarLinks {
+    display: flex;
+    list-style: none;
+}
 
+/* .navBarLinks li, a {
+    margin: 18.5px;
 } */
 
-.navbar-list li:hover {
-    background-color: var(--clr-white);
+.navBarLinks > li {
+    text-align: center;
 }
 
-/* header breakpoints */
-.hero-container {
-    padding: 45px 60px;
+.navBarLinks > li:hover {
+    transition: .2s ease-in-out;
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+/* Hero - Heading Welcome Section CSS */
+.heroCtn {
+    background-color: #fff;
     display: flex;
-    background-color: var(--clr-white);
-    width: 100%;
-    height: 514px;
+    justify-content: center;
+    min-height: 514px;
+    gap: 26.8px;
+    padding: 45px 60px;
     margin-top: 39px;
+
+    /* not needed */
+    /* width: min(1196px, 100%); */
 }
 
-.inner_left {
+.bannerLeftCtn {
+    gap: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.inner_right {
+.mainTextContent {
+    gap: 40px;
     display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+}
+
+.bannerLeftCtn, .bannerRightCtn {
+    width: 100%;
+    min-height: 424px;
+}
+
+.bannerRightCtn {
+    position: relative;
+    right: -60px;
+}
+
+/* .filledButton {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.clearButton {
+    background-color: var(--white);
+    color: var(--red);
+    
+} */
+
+.heroBtnContainer {
+    gap: 1.2em;
+    margin-top: 43px;
+    display: flex;
+    align-self: flex-start;
+}
+
+.welcomeImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 788.8px) {   
+    .heroCtn .heroBtnContainer {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    .heroCtn .heroBtnContainer button {
+        width: 50vw;
+        font-size: 1.15em;
+        align-self: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
+        height: 5em !important;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .studentPhoto {
+        display: none !important;
+    }
+}
+
+/* Hero - Heading Welcome Section CSS media queries */
+@media (max-width: 1384.8px) {
+    .heroCtn {
+        flex-wrap: wrap;
+    }
+
+    .heroCtn .bannerRightCtn {
+        display: block;
+        width: max-content;
+        right: 0;
+    }
+
+    .heroCtn .bannerLeftCtn {
+        gap: 19.50px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .heroCtn .heroBtnContainer {
+        align-self: center;
+    }
+
+    .mainTextContent {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 644.99px) {
+    .heroCtn {
+        max-width: 100%;
+        padding: 25px;
+    }
+    
+    .mainTextContent {
+        padding: 0;
+        text-align: left;
+        font-size: var(--min-size);
+        max-width: 100%;
+    }
+
+    .heroCtn .heroBtnContainer button {
+        align-self: center;
+    }
+
+    body {
+        margin: 0;
+    }
+    
+    .heroCtn {
+        margin-top: 0;
+        padding: 8px auto;
+    }
+
+    .mainLogo {
+        align-self: flex-start;
+    }
+
+    .mainTextContent {
+        align-self: flex-start;
+    }
+
+    .mainTextContent h1 {
+        font-size: clamp(14px, 2.5vw);
+    }
+
+    .mainTextContent p {
+        font-size: clamp(11px, 1.5vw);
+    }
+    
+    .heroBtnContainer button {
+        display: block;
+        width: min(232px, 100%);  
+    }
+}
+
+/* CSS media below 645px */
+@media (max-width: 645px) {
+    .heroCtn .heroBtnContainer button {
+        width: 90vw;
+    }
+
+    body {
+        margin: 0;
+    }
+}
+
+@media (max-width: 501px) {
+    .heroCtn .bannerRightCtn {
+        display: none;
+    }
+}
+
+/* CSS media below 400px (mobile devices) */
+@media (max-width: 400px) {
+    .heroCtn .heroBtnContainer {
+        width: 70vw;
+    }
+}
+
+
+
+/* s2 */
+/* Positive Influence Section CSS */
+.InfluenceCtn {
+    /* background-color: #0000003c; */
+    min-height: 347px;
+    gap: 50px;
+    flex-direction: column;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.headingTextImpact {
+    position: relative;
+    left: 45px;
+    padding: inherit;
+    float: left;
+    display: flex;
+    font-size: xx-large;  
+    /* align-self: flex-start; */
+    /* position: relative; */
+    /* left: 52px;
+    font-weight: 700;
+    color: var(--black);
+    font-size: clamp(38px, 100%, 24px); */
+}
+
+.cardList {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.twoCardsFromLeft, .twoCardsFromRight {
+    gap: inherit;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.twoCardsFromLeft p, .twoCardsFromRight p {
+    font-size: 18px;
+    color: var(--black);
+}
+
+.twoCardsFromLeft h1, .twoCardsFromRight h1 {
+    font-size: 50px;
+    color: var(--red);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: .95em;
+    color: var(--white);
+    background-color: var(--white);
+    width: 167px;
+    height: 219.5px;
+    justify-content: space-between;
+    transition: all .15s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.15);
+}
+
+.card img {
+    display: block;
+    width: 33px;
+    height: 33px;
+    align-self: flex-end;
+}
+
+.red p {
+    color: var(--white);
+}
+
+.red {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    border: 1.5px solid var(--red);
+}
+
+.red:hover {
+    background-color: var(--red);
+    border: 1.5px solid var(--white);
+}
+
+/* Positive Influence Section CSS media queries */
+@media (max-width: 1000px) {
+    .cardList {
+        gap: 15px;
+        display: inline-grid;
+    }
+
+    .twoCardsFromLeft, .twoCardsFromRight {
+        gap: 15px;
+    }
+
+    .headingTextImpact {
+        position: relative;
+        left: 52px;
+    }
+}
+
+/* s3 */
+/* Simplon Course Surveys Section CSS */
+/* scroll - slider (carousel student view) CSS */
+
+.nbSlide h3 {
+    position: relative;
+    font-size: 30px;
+}
+
+/* .scroll {
+    overflow-x: scroll;
+} */
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.surveyCtn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+    min-height: 475px;
+    background-color: var(--white);
+}
+
+.surveyCtn .whiteBannerTestimony {
+    width: inherit;
+    height: inherit;
+}
+
+.surveyCtn .surveyTextCtn {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.surveyCtn .whiteBannerTestimony .surveyBanner .surveyTextCtn .quotes {
+    font-size: 10em;
+    padding: 20em auto;
+    color: var(--red);
+    font-weight: bolder;
+    user-select: none;
+}
+
+.surveyCtn .surveyTextCtn .nameSurvey {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.surveyCtn .surveyTextCtn .surveyDescription {
+    min-height: 10px;
+    text-align: start;
+    color: var(--black);
+}
+
+.surveyCtn .surveyBanner .surveyStudentPhotoCtn {
+    height: 24em;
+}
+
+.surveyCtn .surveyBanner .surveyStudentPhotoCtn .studentPhoto {
+    width: 259px;
+    margin: 20px auto;
+}
+
+.surveyCtn .carouselNumberCtn {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+}
+
+.surveyCtn .whiteBannerTestimony .surveyBanner .arrowCtnRightBottomPos {
+    margin: 19px auto;
+    bottom: 0 !important;
+    position: relative;
+
+    /* margin: 0; */
+    /* align-self: flex-end; */
+    /* right: 0; */
+    /* border: 1.5px solid #000000; */
+    /* background-color: rgba(0, 0, 0, 0.267); */
+    /* right: 0 !important; */
+    /* min-width: 25%; */
+}
+
+.surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn .arrow  {
+    width: 39px;
+    height: 39px;
+    margin: 0;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.prev, .next {
+    transition: .15s ease-in-out;
+    cursor: pointer;
+    margin: auto 18px;
+}
+
+.prev:hover, .next:hover {
+   -ms-transform: scale(1.65); 
+    -webkit-transform: scale(1.65); 
+    transform: scale(1.65);
+}
+
+@media (max-width: 1345px) {
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
+        /* background-color: rgba(175, 49, 49, 0.357); */
+        /* flex-wrap: wrap; */
+        
+        flex-direction: column;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 27em;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .arrowCtnRightBottomPos {
+        /* bottom: 0 !important; */
+        /* align-self: flex-end; */
+        /* border: 1.5px solid #000000; */
+        /* right: 0 !important; */
+        /* padding-inline: 30px; */
+        /* min-width: 25%; */
+        /* padding-block: 1em; */
+        /* background-color: rgba(0, 0, 0, 0.267); */
+        
+        position: relative;
+    }
+
+    /* .surveyCtn .surveyStudentPhotoCtn .whiteBannerTestimony .surveyStudentPhotoCtn .studentPhoto {
+        flex: 1;
+        height: 900px;
+        object-fit: cover;
+    } */
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .surveyCtn .whiteBannerTestimony .hidden {
+        display: none;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentCtn {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner .hidden {
+        display: none;
+        /* not needed */
+        /* flex-: column-reverse; */
+    }
+}
+
+@media (min-width: 1001px) {
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        flex-wrap: nowrap;
+    }
+}
+
+/* s3 */
+/* Simplon Course Surveys Section CSS */
+@media (max-width: 1000px) {
+    .surveyCtn {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .surveyCtn .whiteBannerTestimony {
+        overflow-x: none;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+    }
+    
+    .surveyCtn .whiteBannerTestimony .surveyBanner .arrowCtnRightBottomPos {
+        position: relative;
+        bottom: 0 !important;
+    }
+    
+    .surveyCtn .surveyStudentPhotoCtn {
+        min-width: 100%;
+        margin: auto;
+    }
+
+    .surveyCtn .whiteBannerTestimony .surveyBanner {
+        flex-wrap: nowrap;
+    }
+}
+
+/* below 645px */
+@media (max-width: 645px) {
+    .cardList {
+        gap: 4.15px;
+        display: inline-grid;
+    }
+
+    .twoCardsFromLeft, .twoCardsFromRight {
+        gap: 4.15px;
+    }
+    .card {
+        width: 183.5px;
+        height: 197.5px;
+    }
+}
+
+/* below 412px */
+@media (max-width: 412px) {
+    .headingTextImpact {
+        left: 8px;
+    }
+
+    .InfluenceCtn {
+        padding: 0;
+    }
+
+    .cardList {
+        gap: 3px;
+    }
+
+    .twoCardsFromLeft, .twoCardsFromRight {
+        gap: 3px;
+    }
+}
+
+
+
+
+
+
+/* s4 */
+/* Students at Simplon.co Section CSS ------------------------------  */
+.studentBanner {
+    /* position: relative;
+    display: flex;
+    min-height: 375px;
+    flex-direction: row-reverse;
+    background-color: #000000;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: black; */
+
+    position: relative;
+    display: flex;
+    min-height: 375px;
+    flex-direction: row-reverse;
+    width: 100%;
     justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
 }
 
-.inner_left, .inner_right {
-    width: 50%;
-    height: 424px;
+.studentBanner .studentPhoto2 {
+    height: auto;
+    min-width: 100%;
+    min-height: 100%
 }
 
-.welcome-text {
-    margin-bottom: 10px;
+/* .backgroundPhotoInner {
+    display: block;
+    z-index: 999;
+    position: absolute;
+    width: max-content;
+} */
+
+.studentBanner .whiteContainerAbovePhoto {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 999;
+    width: 30em;
+    background-color: var(--white);
+    width: 511px;
+    min-height: 323px;
+    padding: 40px;
+    position: absolute;
 }
 
-.welcome-img {
-    margin-left: 60px;
+.studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner:hover {
+    color: var(--red);
+    background-color: var(--white);
+    border: 2px solid var(--red); 
 }
 
-.logo-container {
-    width: 300px;
-    height: 102px;
-    margin-bottom: 49px;
+/* Students at Simplon.co Section CSS media queries ------------------------------  */
+@media (max-width: 1420px) {
+    .studentBanner {
+        background-color: var(--white);
+        min-height: 376px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .studentBanner .studentPhoto2 {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    .studentBanner .whiteContainerAbovePhoto {
+        height: 22em;
+        margin-right: 0;
+        margin-top: 0;
+        position: absolute;
+        gap: 39px;
+        align-items: center;
+        position: relative;
+    }
+
+    .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
+        display: block;
+        width: 100%;  
+    }
+    
 }
 
+@media (max-width: 708px) {
+    .studentBanner {
+       padding: 20px;
+    }
 
-/* :: BREAKPOINTS :: */
+    .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
+       display: block;
+       width: min(232px, 100%);  
+    }
 
-/* (889px and above) */
-@media only screen and (max-width: 889px) {
+    .studentBanner .whiteContainerAbovePhoto .studentCtnHeadingText {
+        font-size: clamp(14px, 2.5vw);
+    }
+
+    .studentBanner .whiteContainerAbovePhoto .studentCtnPgText {
+        font-size: clamp(11px, 1.5vw);
+    }
+    
+    .studentBanner .whiteContainerAbovePhoto button {
+        display: block;
+        min-width: 100%;  
+    }
 }
