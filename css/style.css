@@ -67,7 +67,7 @@
 } */
 
 span {
-    font-size: 20px;
+    font-size: 25px;
     margin: auto 9px;
     font-weight: bolder;
 }
@@ -241,7 +241,7 @@ button {
     justify-content: center;
     min-height: 514px;
     gap: 26.8px;
-    padding: 45px 60px;
+    padding: 40px 50px;
     margin-top: 39px;
 
     /* not needed */
@@ -300,7 +300,6 @@ button {
     .heroCtn .heroBtnContainer {
         display: flex;
         flex-direction: column;
-        align-self: center;
     }
 
     .heroCtn .heroBtnContainer button {
@@ -347,7 +346,7 @@ button {
         text-align: center;
         align-items: center;
         flex-direction: column;
-        gap: 20px;
+        gap: 35px;
     }
 }
 
@@ -359,12 +358,13 @@ button {
     
     .mainTextContent {
         padding: 0;
-        text-align: left;
+        justify-content: flex-start !important;
+        text-align: left !important;   
         font-size: var(--min-size);
         max-width: 100%;
     }
 
-    .heroCtn .heroBtnContainer button {
+    .heroCtn .heroBtnContainer .heroBtn {
         align-self: center;
     }
 
@@ -374,14 +374,12 @@ button {
     
     .heroCtn {
         margin-top: 0;
-        padding: 8px auto;
+        /* not needed */
+        /* padding: 8px auto; */
     }
 
-    .mainLogo {
-        align-self: flex-start;
-    }
-
-    .mainTextContent {
+    .heroCtn .bannerLeftCtn .mainLogo, 
+    .heroCtn .bannerLeftCtn .mainTextContent {
         align-self: flex-start;
     }
 
@@ -393,7 +391,7 @@ button {
         font-size: clamp(11px, 1.5vw);
     }
     
-    .heroBtnContainer button {
+    .heroCtn .heroBtnContainer .heroBtn {
         display: block;
         width: min(232px, 100%);  
     }
@@ -401,13 +399,13 @@ button {
 
 /* CSS media below 645px */
 @media (max-width: 645px) {
-    .heroCtn .heroBtnContainer button {
+    .heroCtn .heroBtnContainer .heroBtn {
         width: 90vw;
     }
 
     body {
         margin: 0;
-    }
+    } 
 }
 
 @media (max-width: 501px) {
@@ -536,6 +534,13 @@ button {
     }
 }
 
+
+@media (max-width: 370.01px) {
+    .twoCardsFromRight {
+        flex-wrap: nowrap;
+    } 
+}
+
 /* s3 */
 /* Simplon Course Surveys Section CSS */
 /* scroll - slider (carousel student view) CSS */
@@ -578,8 +583,9 @@ button {
 }
 
 .surveyCtn .whiteBannerTestimony .surveyBanner .surveyTextCtn .quotes {
-    font-size: 10em;
-    padding: 20em auto;
+    font-size: 170px;
+    margin: -30px 0;
+    padding: 0;
     color: var(--red);
     font-weight: bolder;
     user-select: none;
@@ -826,10 +832,16 @@ button {
     position: absolute;
 }
 
-.studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner:hover {
+.studentBanner .whiteContainerAbovePhoto .studentBannerBtn:hover {
     color: var(--red);
     background-color: var(--white);
     border: 2px solid var(--red); 
+    
+}
+
+.studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
+    min-width: 28.8vw;
+
 }
 
 /* Students at Simplon.co Section CSS media queries ------------------------------  */
@@ -850,6 +862,8 @@ button {
 
     .studentBanner .whiteContainerAbovePhoto {
         height: 22em;
+        max-width: fit-content;
+        /* padding: 40px 50px   ; */
         margin-right: 0;
         margin-top: 0;
         position: absolute;
@@ -858,33 +872,38 @@ button {
         position: relative;
     }
 
-    .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
+    .studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
         display: block;
         width: 100%;  
     }
     
 }
 
-@media (max-width: 708px) {
+@media (max-width: 470.01px) {
     .studentBanner {
-       padding: 20px;
-    }
-
-    .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
-       display: block;
-       width: min(232px, 100%);  
-    }
-
-    .studentBanner .whiteContainerAbovePhoto .studentCtnHeadingText {
-        font-size: clamp(14px, 2.5vw);
-    }
-
-    .studentBanner .whiteContainerAbovePhoto .studentCtnPgText {
-        font-size: clamp(11px, 1.5vw);
-    }
-    
-    .studentBanner .whiteContainerAbovePhoto button {
+        padding: 20px;
+     }
+ 
+     .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
         display: block;
-        min-width: 100%;  
-    }
+        width: min(232px, 100%);  
+     }
+ 
+     .studentBanner .whiteContainerAbovePhoto .studentCtnHeadingText {
+         font-size: clamp(14px, 2.5vw);
+     }
+ 
+     .studentBanner .whiteContainerAbovePhoto .studentCtnPgText {
+         font-size: clamp(11px, 1.5vw);
+     }
+     
+     .studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
+         /* width: 100%; */
+         display: block;
+         width: 90vw;  
+     } 
 }
+
+/* @media (max-width: 646px) {
+    
+} */
