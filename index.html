@@ -6,40 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="icon" href="./images/logo-simplon-1.png">
+    <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Simplon.co 2023 • Développer de nouvelles compétences en numérique.</title>
 </head>
-
 <body>
-
     <!-- Header / Navigation Bar (Top) -->
-   
-    <!-- <header class="headerBody ctn">
-        <nav class="navBar ctn">
-            <div class="logo ctn">
-                <img src="./images/logo-simplon-1.png"></img>
-            </div>
-            <ul class="navBarLinks ctn">
-                <li><a href="#">Entreprises</a></li>
-                <li><a href="#">Réseaux</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Collaborer<i class="fa fa-caret-down"></i></a></li>
-                <li><a href="#">Formation<i class="fa fa-caret-down"></i></a></li>
-                <li><a href="#">Contact</a></li>
+    <header class="headerBody">
+        <nav class="navCtn">
+            <div class="logo">
+                <img src="./images/logo-simplon-1.svg"></img>
+           </div>
+            <ul class="navLinks">
+                <li class="navLinksItem"><a class="linkRefc" href="#">Entreprises</a></li>
+                <li class="navLinksItem"><a class="linkRefc" href="#">Réseaux</a></li>
+                <li class="navLinksItem"><a class="linkRefc" href="#">À propos</a></li>
+                <li class="navLinksItem"><a class="linkRefc" href="#">Collaborer<i class="fa fa-caret-down"></i></a></li>
+                <li class="navLinksItem"><a class="linkRefc" href="#">Formation<i class="fa fa-caret-down"></i></a></li>
+                <li class="navLinksItem"><a class="linkRefc" href="#">Contact</a></li>
             </ul>
+            <!-- <i class="fa fa-bars" id="burger"></i> -->
+            <!-- <i class="fa fas fa-bars"></i> -->
+            <div id="burger" class="custom-fa-bars-open">
+                <img class="icon-burger-op" src="./images/burger-fermé.svg" alt="Icone du menu burger fermé">
+            </div>
+            <div id="burgerOpenedMenu" class="hidden">
+                <img class="icon-burger-op" src="./images/burger-ouvert.svg" alt="Icone du menu burger fermé">
+            </div>
         </nav>
-    </header> -->
-
+    </header>
     <hr class="whiteLine">
-
-    <!-- Hero - Heading Welcome Section -->
+    <!-- Hero Welcome Section -->
     <div class="heroCtn">
         <div class="bannerLeftCtn">
             <div class="mainLogo">
                 <img src="./images/logo-accueil.svg" alt="Logo de Simplon">
             </div>
             <div class="mainTextContent">
-                <h1 class="WelcomeHeadingText">
+                <h1 class="welcomeHeadingText">
                     Simplon, réseau de Fabriques
                     numériques et inclusives
                 </h1>
@@ -54,11 +60,9 @@
         </div>
         <img class="bannerRightCtn welcomeImg show" src="./images/img-accueil.png" alt="Photo d'accueil de Simplon">
     </div>
-
     <hr class="division">
     <h1 class="headingTextImpact">Notre Impact</h1>
     <hr class="division">
-
     <!-- Positive Influence Section -->
     <div class="InfluenceCtn">
                 <div class="cardList">
@@ -87,15 +91,12 @@
             </div>
         </div>
     </div>
-
     <hr class="division">
     <h1 class="headingTextImpact">Témoignages</h1>
     <hr class="division">
-
     <!-- Simplon Course Surveys Section -->
     <div class="surveyCtn">
         <div class="whiteBannerTestimony">
-
             <div class="surveyBanner d-flex-wrap">
                 <div class="surveyTextCtn">
                     <p class="quotes">“</p>
@@ -121,7 +122,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="surveyBanner hidden">
                 <div class="surveyTextCtn">
                     <p class="quotes">“</p>
@@ -194,6 +194,85 @@
     <h1 class="headingTextImpact">Ils nous soutiennent</h1>
     <hr class="division">
 
+    <!-- <div class="partnershipBanner"> -->
+        <!-- <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-caisse-depots.png" alt="logo de la Caisse depots">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-idf.png" alt="logo de l'Ile-de-France">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-ue.png" alt="logo union européenne">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-binance.png" alt="binance">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-paris.png" alt="Logo de la ville de Paris">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-meta.png" alt="Logo de Meta">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-investissement.png" alt="logo Investissement">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-avanade.png" alt="Logo d'Avanade">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-sg.png" alt="Logo de la Société Générale">
+        </div>
+        <div class="partnershipItem">
+            <img class="itemLogo" src="./images/logo-renault.png" alt="Logo de Renault">
+        </div> -->
+
+
+    <!-- <hr class="division">
+    <h1 class="headingTextImpact">Ils nous soutiennent</h1>
+    <hr class="division"> -->
+
+    <div class="footerBody">
+        <div class="innerFooterCtn itemFooter">
+            <div class="logoFooterCtn itemFooterCtn">
+                <img src="./images/footer-logo-img.svg" alt="Logo de Simplon.co">
+            </div>
+            <div class="inputContactCtn itemFooterCtn">
+                <h3 class="footerHeadingText">Restez informés</h3>
+                <p class="footerParagraphText">Inscrivez-vous à la newsletter</p>
+                <div class="formGroup field">
+                    <input type="text" class="formField" id="letterIcon" placeholder="Entrez votre email" name="name" id='name' required />
+                    <label for="name" class="formLabel"></label>
+                  </div>
+            </div>
+        </div>
+        <div class="partnershipFooterCtn itemFooter">
+            <div class="circleLogoCtnPartnership">
+                <img class="logoPartnership" src="./images/fb.svg" alt="Facebook">
+            </div>
+            <div class="circleLogoCtnPartnership">
+                <img class="logoPartnership" src="./images/insta.svg" alt="Instagram">
+            </div>
+            <div class="circleLogoCtnPartnership">
+                <img class="logoPartnership" src="./images/twitter.svg" alt="Twitter">
+            </div>
+            <div class="circleLogoCtnPartnership">
+                <img class="logoPartnership" src="./images/youtube.svg" alt="Youtube">
+            </div>
+            <div class="circleLogoCtnPartnership">
+                <img class="logoPartnership" src="./images/linkedin.svg" alt="Linkedin">
+            </div>
+        </div>
+        <div class="footerLinkCtn itemFooter">
+            <a href="#" class="footerLink">Nos actualités</a>
+            <a href="#" class="footerLink">Rejoindre nos équipes</a>
+            <a href="#" class="footerLink">Nos agences en numériques</a>
+            <a href="#" class="footerLink">Presse</a>
+            <a href="#" class="footerLink">Contact</a>
+            <a href="#" class="footerLink">Plan du site</a>
+            <a href="#" class="footerLink">Mentions légales</a>
+            <a href="#" class="footerLink noRightBorder">Accessibilité</a>
+        </div>
+    </div>
     <script src="./app.js"></script>
 </body>
 </html>

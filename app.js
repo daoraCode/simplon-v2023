@@ -33,3 +33,15 @@ function showSlide(n) {
     }
     slides[slideIndex - 1].style.display = "flex";
 }
+
+// nav menu burger function
+const burger = document.getElementById('burger')
+const navLinks = document.querySelector('.navLinks')
+const logo = document.querySelector('.logo')
+let close = document.querySelector('.custom-fa-bars-open')
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('flex')
+    logo.classList.toggle('hidden')
+    close.classList.toggle('centeredPosition')
+})

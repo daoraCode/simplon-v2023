@@ -8,35 +8,10 @@
     --black: #000000;
     --white: #ffffff;
 
-    /* ? */
-    --grey: #F1F5F8;
-    
-    /* --widthMedium: 645px; */
-    /* --widthSmall: 500px; */
-
-    /* dark mode */
-    --dark: rgba(43, 43, 43, 0.362);
-
-    /* default font size */
-    /* --min-size: 15.8px; */
-    /* --mid-size: 22.8px; */
-    /* --max-size: 38.8px; */
-
-    /* default font weight */
-    /* --min-font-weight: 400; */
-    /* --max-font-weight: 700; */
-
     /* line-height */
     --ln-height-heading-text: 43.09px;
     --ln-height-prg-text: 24.55px;
 }
-
-/* @media screen and (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--dark);
-      color: var(--white);
-    }
-} */
 
 .d-block {
     display: block;
@@ -61,10 +36,6 @@
     border: white;
     margin-block: 4em;
 }
-
-/* .ctn {
-    background-color: #00000018;
-} */
 
 span {
     font-size: 25px;
@@ -98,17 +69,6 @@ p {
     font-weight: 300;
 }
 
-/* h1 {
-    line-height: var(--ln-height-heading-text);
-    font-weight: bol
-} */
-
-.whiteLine {
-    height: 1px;
-    width: 100%;
-    background-color: var(--white);
-    border: none;
-}
 
 a {
     border: 0;
@@ -125,10 +85,8 @@ body {
     line-height: 1.13;
     font-size: var(--min-size);
     color: var(--black);
-    -webkit-text-size-adjust: 100%;
-
-    background-color: rgba(0, 102, 255, 0.098);
-    /* color: var(--white); */
+    -webkit-text-size-adjust: 100%;    
+    background-color: rgba(173, 193, 222, 0.295);
 }
 
 html {
@@ -136,11 +94,12 @@ html {
 }
 
 
-/* s1 */
-/* Header / Navigation Bar (Top) Section CSS */
-i {
+/* Header Simplon 2023 */
+/* Navigation Bar (Top) Section CSS */
+
+/* i {
     margin: 6px 7px;
-}
+} */
 
 button {
     width: max-content;
@@ -172,37 +131,48 @@ button {
     border: 2px solid var(--red);
 }
 
-.fa-bars {
-    color: var(--red);
-    font-size: 56px;
+.custom-fa-bars-open { 
+    color: var(--red); 
+    width: 56px;
+    display: none;
 }
 
 .logo {
-    width: 58px;
-    height: auto;
+    width: 76px;
+    min-height: auto;
+}
+
+.headerBody .navCtn .custom-fa-bars-open {
+    width: 75px;
+    display: none;
 }
 
 
+/* Beginning ! ------------------------------------------------- */
+/* Header / Navigation Bar (Top) Section CSS */
+.whiteLine {
+    height: 1px;
+    width: 100%;
+    background-color: var(--white);
+    border: none;
+}
 
 .headerBody {
-    background-color: #0000004f;
-    display: flex;
     width: 100%;
-    height: 83px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
+    min-height: 83px;
+    position: relative;
 }
 
-.navBar {
+.headerBody .navCtn {
+    margin: auto;
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.navBar .navBarLinks {
+.headerBody .navCtn .navLinks {
     text-align: center;
     align-items: center;
     line-height: 24.55px;
@@ -212,28 +182,142 @@ button {
     text-decoration: none; 
     margin: 0;
     padding: 0;
-}
-
-.navBarLinks {
     display: flex;
     list-style: none;
 }
 
-/* .navBarLinks li, a {
-    margin: 18.5px;
-} */
-
-.navBarLinks > li {
-    text-align: center;
+.headerBody .navCtn .navLinks .navLinksItem {
+    list-style-type: none;
+    /* margin: 2px 3px; */
 }
 
-.navBarLinks > li:hover {
-    transition: .2s ease-in-out;
-    background-color: var(--red);
+
+.headerBody .navCtn .navLinks .navLinksItem .linkRefc {
+    color: var(--black);
+    text-decoration: none;
+    margin: 0 1.05rem;
+    position: relative;
+    
+}
+
+.headerBody .navCtn .navLinks .navLinksItem .linkRefc:hover {
+    transition: all .3s ease-in-out;
     color: var(--white);
+    background-color: var(--red);
+}
+
+.headerBody .navCtn .navLinks .navLinksItem .linkRefc::after {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: .3s ease all;
+}
+
+.headerBody .navCtn .navLinks .navLinksItem .linkRefc:hover:after {
+    width: 100%;
+}
+
+.flex {
+    display: flex !important;
+}
+
+@media (max-width: 955px) {
+    .headerBody .navCtn .custom-fa-bars-open {
+        /* display: inline; */
+    }
+
+    .headerBody .navCtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .headerBody .navCtn .navLinks {
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* transform: translateX(0); */
+        transition: .3s ease all;
+        z-index: 10;
+        margin-top: 8em;
+    }
+
+    .headerBody .navCtn .logo {
+        /* margin-left: -5em; */
+        width: 100px;
+        /* padding-bottom: 5px; */
+        /* position: absolute; */
+        top: 1em;
+        left: 5em;
+    }
+
+    .headerBody .navCtn .custom-fa-bars-open {
+        margin-right: -2em;
+        /* display: block; */
+        /* width: 3.65em; */
+        /* position: absolute; */
+        /* top: 1em; */
+        /* right: 5em; */
+    }
+
+    .headerBody .navCtn .navLinks {
+        display: none;
+    }
+
+    .headerBody .navCtn .navLinks .navLinksItem .linkRefc {
+        color: var(--black);
+    }
+
+    .headerBody .navCtn .navLinks .navLinksItem .linkRefc::after {
+        background-color: var(--white);
+    }
+
+    .headerBody .navCtn .custom-fa-bars-open {
+        display: block;
+    }
+}
+
+.centeredPosition {
+    position: absolute;
+    left: 50%;
+    top: 45px;
+}
+
+@media (max-width: 646px) {
+    .headerBody .navCtn {
+        padding: 20px 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .headerBody .navCtn .custom-fa-bars-open {
+        display: block;
+        margin-right: -15px;
+    }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* s1 */
 /* Hero - Heading Welcome Section CSS */
 .heroCtn {
     background-color: #fff;
@@ -243,9 +327,6 @@ button {
     gap: 26.8px;
     padding: 40px 50px;
     margin-top: 39px;
-
-    /* not needed */
-    /* width: min(1196px, 100%); */
 }
 
 .bannerLeftCtn {
@@ -269,19 +350,8 @@ button {
 
 .bannerRightCtn {
     position: relative;
-    right: -60px;
+    right: -50px;
 }
-
-/* .filledButton {
-    background-color: var(--red);
-    color: var(--white);
-}
-
-.clearButton {
-    background-color: var(--white);
-    color: var(--red);
-    
-} */
 
 .heroBtnContainer {
     gap: 1.2em;
@@ -319,7 +389,7 @@ button {
     }
 }
 
-/* Hero - Heading Welcome Section CSS media queries */
+/* s1 Hero - Heading Welcome Section CSS media queries */
 @media (max-width: 1384.8px) {
     .heroCtn {
         flex-wrap: wrap;
@@ -374,8 +444,6 @@ button {
     
     .heroCtn {
         margin-top: 0;
-        /* not needed */
-        /* padding: 8px auto; */
     }
 
     .heroCtn .bannerLeftCtn .mainLogo, 
@@ -383,7 +451,8 @@ button {
         align-self: flex-start;
     }
 
-    .mainTextContent h1 {
+    .mainTextContent .welcomeHeadingText, 
+    .footerBody, .innerFooterCtn .inputContactCtn .footerHeadingText {
         font-size: clamp(14px, 2.5vw);
     }
 
@@ -426,7 +495,6 @@ button {
 /* s2 */
 /* Positive Influence Section CSS */
 .InfluenceCtn {
-    /* background-color: #0000003c; */
     min-height: 347px;
     gap: 50px;
     flex-direction: column;
@@ -444,12 +512,6 @@ button {
     float: left;
     display: flex;
     font-size: xx-large;  
-    /* align-self: flex-start; */
-    /* position: relative; */
-    /* left: 52px;
-    font-weight: 700;
-    color: var(--black);
-    font-size: clamp(38px, 100%, 24px); */
 }
 
 .cardList {
@@ -541,18 +603,15 @@ button {
     } 
 }
 
+
+
 /* s3 */
 /* Simplon Course Surveys Section CSS */
 /* scroll - slider (carousel student view) CSS */
-
 .nbSlide h3 {
     position: relative;
     font-size: 30px;
 }
-
-/* .scroll {
-    overflow-x: scroll;
-} */
 
 .flex-wrap {
     display: flex;
@@ -622,14 +681,6 @@ button {
     margin: 19px auto;
     bottom: 0 !important;
     position: relative;
-
-    /* margin: 0; */
-    /* align-self: flex-end; */
-    /* right: 0; */
-    /* border: 1.5px solid #000000; */
-    /* background-color: rgba(0, 0, 0, 0.267); */
-    /* right: 0 !important; */
-    /* min-width: 25%; */
 }
 
 .surveyCtn .surveyStudentPhotoCtn .carouselNumberCtn .arrow  {
@@ -654,9 +705,7 @@ button {
 
 @media (max-width: 1345px) {
     .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn {
-        /* background-color: rgba(175, 49, 49, 0.357); */
         /* flex-wrap: wrap; */
-        
         flex-direction: column;
         display: flex;
         align-content: center;
@@ -665,24 +714,9 @@ button {
         height: 27em;
     }
 
-    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .arrowCtnRightBottomPos {
-        /* bottom: 0 !important; */
-        /* align-self: flex-end; */
-        /* border: 1.5px solid #000000; */
-        /* right: 0 !important; */
-        /* padding-inline: 30px; */
-        /* min-width: 25%; */
-        /* padding-block: 1em; */
-        /* background-color: rgba(0, 0, 0, 0.267); */
-        
+    .surveyCtn .whiteBannerTestimony .surveyBanner .surveyStudentPhotoCtn .arrowCtnRightBottomPos {     
         position: relative;
     }
-
-    /* .surveyCtn .surveyStudentPhotoCtn .whiteBannerTestimony .surveyStudentPhotoCtn .studentPhoto {
-        flex: 1;
-        height: 900px;
-        object-fit: cover;
-    } */
 
     .surveyCtn .whiteBannerTestimony .surveyBanner {
         display: flex;
@@ -785,17 +819,6 @@ button {
 /* s4 */
 /* Students at Simplon.co Section CSS ------------------------------  */
 .studentBanner {
-    /* position: relative;
-    display: flex;
-    min-height: 375px;
-    flex-direction: row-reverse;
-    background-color: #000000;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: black; */
-
     position: relative;
     display: flex;
     min-height: 375px;
@@ -811,13 +834,6 @@ button {
     min-width: 100%;
     min-height: 100%
 }
-
-/* .backgroundPhotoInner {
-    display: block;
-    z-index: 999;
-    position: absolute;
-    width: max-content;
-} */
 
 .studentBanner .whiteContainerAbovePhoto {
     display: flex;
@@ -841,7 +857,36 @@ button {
 
 .studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
     min-width: 28.8vw;
+}
 
+
+
+
+/* s6 */
+.partnershipBanner {
+    position: relative;
+    width: 100%;
+    width: 400px;
+    height: 270px;
+    min-height: 163px;
+    overflow: hidden;
+    background-color: #cdcdcd;
+}
+.partnershipItem {
+      position: absolute;
+      width: 100%;
+      height: 270px;
+      border: 1px solid #2e2e2e;
+      top: 0;
+      left: 100%;
+}
+.partnershipItem:active {
+    left: 0;
+    transition: all 0.3s ease-out;
+}
+
+.partnershipBanner .partnershipItem .itemLogo {
+    width: 30px;
 }
 
 /* Students at Simplon.co Section CSS media queries ------------------------------  */
@@ -863,7 +908,6 @@ button {
     .studentBanner .whiteContainerAbovePhoto {
         height: 22em;
         max-width: fit-content;
-        /* padding: 40px 50px   ; */
         margin-right: 0;
         margin-top: 0;
         position: absolute;
@@ -875,35 +919,283 @@ button {
     .studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
         display: block;
         width: 100%;  
-    }
-    
+    } 
 }
 
 @media (max-width: 470.01px) {
     .studentBanner {
         padding: 20px;
-     }
+    }
  
      .studentBanner .whiteContainerAbovePhoto .heroBtnStudentBanner {
         display: block;
         width: min(232px, 100%);  
-     }
+    }
  
      .studentBanner .whiteContainerAbovePhoto .studentCtnHeadingText {
          font-size: clamp(14px, 2.5vw);
-     }
+    }
  
      .studentBanner .whiteContainerAbovePhoto .studentCtnPgText {
          font-size: clamp(11px, 1.5vw);
-     }
+    }
      
      .studentBanner .whiteContainerAbovePhoto .studentBannerBtn {
          /* width: 100%; */
          display: block;
          width: 90vw;  
-     } 
+    } 
 }
 
-/* @media (max-width: 646px) {
+/* Footer Simplon 2023 CSS Media queries */
+/* DESKTOP TO TABLET  */
+.footerBody {
+    padding: 20px 104px 50px;
+    /* margin-left: -113px; */
+    /* margin-right: -113px; */
+    width: 100%;
+    min-height: 351px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--red);
+}
+
+.footerBody .innerFooterCtn {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-around;
+}
+
+.footerBody .innerFooterCtn .logoFooterCtn,
+.footerBody .innerFooterCtn .inputContactCtn {
+    width: 654px;
+}
+
+.footerBody .innerFooterCtn .logoFooterCtn {
+    color: var(--white);
+    gap: 10px;
+    flex-direction: column;
+}
+
+.footerBody .innerFooterCtn .inputContactCtn {
+    color: var(--white);
+    height: 161px;
+    padding-bottom: 50px;
+}
+
+.footerBody, .innerFooterCtn .inputContactCtn .footerHeadingText {
+    font-size: 45px;
+}
+
+.footerBody, .innerFooterCtn .inputContactCtn .formGroup {
+    width: 100%;    
+}
+
+.formGroup {
+    position: relative;
+    padding: 5px 0 0;
+}
+
+.formField, 
+.formField::placeholder {
+    padding-left: 5px;
+}
+
+.formGroup {
+    position: relative;
+    padding: 5px 0 0;
+}
+
+.formField, 
+.formField::placeholder {
+    padding-left: 5px;
+}
+  
+.formField {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--white);
+    padding: 7px;
+    background: transparent;
+    padding-left: 1.4em;
+    transition: border-color 0.2s;
+}
+
+.formField::placeholder {
+    margin-block: auto;
+    color: var(--red);
+    font-size: 18px;
+}
+
+.footerBody .innerFooterCtn .inputContactCtn .formGroup #letterIcon {
+    background: url("../images/icon-mail.svg") no-repeat right var(--red);
+    background-size: 49.95px;
+    color: var(--white);
+}
+
+.footerBody .partnershipFooterCtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    gap: 1em;
+}
+
+.footerBody .footerLinkCtn {
+    justify-content: center;
+    margin: auto;
+    gap: 5px;
+    display: flex;
+    width: 100%;
+    height: 20px;
+}
+
+.footerBody .footerLinkCtn .footerLink {
+    margin: 8px 8px 8px;
+    padding-right: 15px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    border-right: 1px solid var(--white);
+    white-space: nowrap;
+    transition: all .405s ease;
+}
+
+.footerBody .footerLinkCtn .footerLink:hover {
+    color: var(--red);
+    background-color: var(--white);
+}
+
+.footerBody .footerLinkCtn .footerLink {
+    margin: 8px 8px 8px;
+    padding-right: 15px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    border-right: 1px solid var(--white);
+    white-space: nowrap;
+}
+
+.footerBody .footerLinkCtn .noRightBorder {
+    border-right: none !important;
+}
+
+
+/* Footer Simplon 2023 CSS Media queries */
+/* DESKTOP TO TABLET  */
+@media (max-width: 1301px) {
+    .footerBody .innerFooterCtn {
+        display: block;
+    }
+
+    .footerBody .innerFooterCtn .inputContactCtn {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footerBody .innerFooterCtn .inputContactCtn,
+    .footerBody .innerFooterCtn .inputContactCtn .footerHeadingText,
+    .footerBody .innerFooterCtn .inputContactCtn .footerParagraphText {
+        margin: auto;
+    }
+
+    .footerBody .innerFooterCtn .logoFooterCtn { 
+        margin: 25px auto;  
+        width: 25vw;
+    }
+
+    .footerBody .footerLinkCtn {
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        gap: 12px;
+        height: max-content;
+        width: 100%;
+    }
+
+    .footerBody .footerLinkCtn .footerLink {
+        border-right: transparent;
+        font-size: 24px;
+        font-size: clamp(17px, 5vw, 24px);
+    }
+}
+
+/* TABLET TO MOBILE */
+@media (max-width: 1080px) {
+    .footerBody {
+        gap: 60px;
+    }
+
+    .footerBody .innerFooterCtn .inputContactCtn {
+        width: 100%;
+    }
+
+    .footerBody .partnershipFooterCtn {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 763px) {
+    .footerBody .innerFooterCtn .inputContactCtn .footerHeadingText {
+        white-space: nowrap;
+        font-size: clamp(33px, 5vw, 90px);
+    }
+
+    .footerBody .innerFooterCtn .logoFooterCtn {
+        margin: 25px auto 50px;
+        width: 50vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .footerBody {
+        padding: 30px 20px 60px;
+        gap: 30px;
+    }
+
+    .footerBody .innerFooterCtn .inputContactCtn .footerHeadingText {
+        white-space: nowrap;
+    }
+
+    .formField {
+        display: inline-block;
+        overflow: auto;
+    }
+
+    .logoFooterCtn {
+        display: flex !important;
+    }
+
+    .footerBody .innerFooterCtn .inputContactCtn .formGroup #letterIcon[type="text"]:focus,
+    .footerBody .innerFooterCtn .inputContactCtn .formGroup #letterIcon[type="text"]:valid {
+        background: none;
+    }
+
+    .footerBody .itemFooter:nth-of-type(1) {
+        order: 3;
+    }
     
-} */
+    .footerBody .itemFooter:nth-of-type(2) {
+        order: 1;
+    }
+    
+    .footerBody .itemFooter:nth-of-type(3) {
+        order: 2;
+    }
+
+    .footerBody .innerFooterCtn {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .footerBody .footerLinkCtn .footerLink {
+        text-align: start;
+    }
+}
