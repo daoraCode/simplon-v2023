@@ -10,6 +10,7 @@ function currentSlide(n) {
     showSlide(slideIndex = n)
 }
 
+
 // main function to change actual slide
 function showSlide(n) {
     let i;
@@ -33,6 +34,11 @@ function showSlide(n) {
     }
     slides[slideIndex - 1].style.display = "flex";
 }
+
+
+
+
+
 
 // nav menu burger function
 const burger = document.getElementById('burger')
